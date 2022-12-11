@@ -5,6 +5,8 @@ const session = require("express-session");
 const passport = require("passport");
 const bcrypt = require('bcrypt');
 
+mongoose.set('strictQuery', true);
+
 // For File Uploads, require express-fileupload 
 const fileUpload = require("express-fileupload");
 const path = require("path");
