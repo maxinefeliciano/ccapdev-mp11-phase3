@@ -1,0 +1,161 @@
+:root {
+    /*COPY IN ALL HTML PAGES*/
+    --color-prim-one: #002DE4;
+    --color-prim-two: white;
+    --color-text-desc: #D9DEFF;
+
+    --color-prim-button: #002DE4;
+    --color-prim-button-hover: #211B89;
+    --color-prim-button-hover-text: rgb(226, 226, 226);
+    --color-supp-button: rgb(246, 246, 246);
+    --color-supp-button-hover: #D9E0E6;
+    --color-supp-button-hover-text: #211B89;
+
+    --color-border: rgb(214, 214, 214);
+    --border-radius: 4px; 
+}
+
+/*Header*/
+#addBtn {
+    height: 60px;
+    padding-inline: 22px;
+    border-style: solid;
+    border-width: 0.1px;
+    border-color: rgb(16, 53, 176);
+    background-color: var(--color-prim-button);
+    color: white;
+    border-radius: var(--border-radius);
+    font-size: medium;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+#addBtn:hover {
+    background-color: var(--color-prim-button-hover);
+    color: var(--color-prim-button-hover-text);
+}
+
+/*Content*/
+.content-container {
+    width: 90%;
+    height: 360px;
+    margin: 0 auto;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--border-radius);
+    background-color: white;
+    overflow-y: scroll;
+}
+
+.content-container .header {
+    display: flex;
+    background-color: rgba(0, 45, 228, 0.2);
+    padding-inline: 12px;
+    border-radius: var(--border-radius);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.h-course {
+    width: 134px;
+}
+
+.h-type {
+    width: 195px;
+}
+
+.h-doc {
+    width: 674px;
+}
+
+/*Content Documents*/
+.documents {
+    padding-inline: 10px;
+}
+
+.sample-resource {
+    margin-block: 20px;
+    position: relative;
+}
+
+.doc-details {
+    display: inline-flex;
+    width: 100%;
+    vertical-align: top;
+    margin-bottom: 5px;
+}
+
+.sample-resource p {
+    font-size: 12px;
+}
+
+.course, .type, .name {
+    margin-block: 0;
+}
+
+.sample-resource .course {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.sample-resource .type {
+    flex: 1.5;
+    margin-right: 20px;
+}
+
+.sample-resource .doc {
+    flex: 5;
+}
+
+.doc .doc-title {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--color-prim-one);
+}
+
+.doc .doc-desc {
+    margin: 0;
+    color: rgb(60, 59, 59);
+} 
+
+.doc-buttons {
+    width: 200px;
+    text-align: end;
+}
+
+.doc-buttons .btn-edit {
+    background-color: rgb(20, 23, 207); 
+    border: none; 
+    border-radius: var(--border-radius);
+    color: white; 
+    margin: 0;
+    padding: 10px 14px; 
+    font-size: 12px; 
+    cursor: pointer; 
+    transition: background-color 0.15s;
+}
+
+
+.doc-buttons .btn-delete {
+    background-color: rgb(207, 45, 20); 
+    border: none; 
+    border-radius: var(--border-radius);
+    color: white; 
+    margin: 0;
+    padding: 10px 14px; 
+    font-size: 12px; 
+    cursor: pointer; 
+    margin-left: 10px;
+    transition: background-color 0.15s;
+}
+
+.doc-buttons .btn-edit:hover {
+    background-color: rgba(20, 23, 207, 0.8);
+}
+
+
+.doc-buttons .btn-delete:hover {
+    background-color: rgba(207, 45, 20, 0.8);
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Document</title>
+    <link rel="shortcut icon" href="/static/images/testlogo.png">
+
+    <!--External CSS Code-->
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/edit-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--External JS code-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/edit-script.js"></script>
+</head>
+<body>
+
+    <!--Navigation Bar-->
+    <div id = "header">
+        <a href="/uploads"><img src="/static/images/testlogo2.png" alt="Peer Learning Logo" align="left"></a>
+        <div class="topnav">
+            <input onclick="dropdown()" type="text" placeholder="Search.." id="Input" onkeyup="filter()">
+            <div class="dropdown">
+                <div id="Dropdown" class="dropdown-content">
+                    <ul>
+                    <% views.forEach(function(resource){ %>
+                        <li><a href="/view/<%= resource.id %>" class="resource"><%= resource.course %>: <%= resource.title %></a></li>
+                    <% }); %>
+                    </ul>
+                </div>
+            </div>
+            <a href="/logout">Log Out</a>
+            <a href="/profile">Edit Profile</a>
+            <a href="/about">About</a>
+        </div>
+    </div>
+
+    <script src="/static/js/viewScript.js"></script>
+
+    <!--Header-->
+    <div class="page-header">
+        
+        <div class="title">
+            <h1>Edit Document</h1>
+            <h2>You may edit the following fields for this document.</h2>
+        </div>
+
+        <button id="goBackBtn">Go Back to Uploads</button>
+    </div>
+
+    <!--Content-->
+    <div class="content-container">
+        
+        <div class="upload-section">
+            
+            <!--Fill up Details-->
+            <% resources.find(function(resource){ %>
+            <div class="fill-details">
+                <form action="/updateDoc" method="post">
+                    <input type="hidden" value="<%= resource.id %>" name="id">
+                    
+                    <div class="upper">
+                        <!--Course-->
+                        <div class="info">
+                            <label for="course">Course: </label><br>
+                            <input type="text" id="course" value="<%= resource.course %>" name="course" required>
+                        </div>  
+                        
+                        <!--Document Type-->
+                        <div class="info">
+                            <label for="docType">Document Type: </label><br>
+                            <input type="text" id="docType" value="<%= resource.type %>" name="docType" required>
+                        </div>  
+                    </div>
+                    <br>
+
+                    <!--Title-->
+                    <div class="info">
+                        <label for="title">Title: </label><br>
+                        <input type="text" id="title" value="<%= resource.title %>" name="title" required>
+                    </div> 
+                    <br> 
+
+                    <!--Upload Buttons-->
+                    <div class="upload-buttons">
+                        <input type="reset" id="resetBtn">
+                        <input type="submit" id="submitBtn">
+                    </div>
+                
+                </form>
+            </div>
+           
+        </div>
+
+        <!--File Preview-->
+        <div class="preview-section">
+            <p>Preview:</p>
+            <iframe id="file-preview" src="<%= resource.document %>"></iframe>
+        </div>
+        <% }); %>
+        
+    </div>
+
+</body>
+</html>

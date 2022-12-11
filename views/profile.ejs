@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<thead>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="shortcut icon" href="/static/images/testlogo.png">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+     <!--External JS code-->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+     <script type="text/javascript" src="/static/js/profile-script.js"></script>
+</thead>
+
+<tbody>
+    
+<div class="container_2">
+    <% users.forEach(function(user){ %>
+    <div class="profile__left--name">
+        <img class="profile_pic" src="/static/images/profile.png" alt="user" width="100">
+        <h2><%= user.name %></h2>
+         <p><%= user.occupation %></p>
+    </div>
+    <div class="profile__right--info">
+        <div class = "navbar">
+            <a href="/uploads"><img src="/static/images/testlogo2.png" alt="Course Hero Logo"></a>
+        </div>
+        <div>
+            <h2 class="header">PROFILE</h2>
+            <div class="class data">
+                <h3>Email:</h3>
+                <p><%= user.email %></p>
+            </div>
+            <div class="class data">
+                <h3>Username:</h3>
+                <p><%= user.username %></p>
+           </div>
+            <div class="class data">
+                <h3>Password:</h3>
+                <p>********</p>
+            </div>
+        </div>
+        <a href="deleteUser/<%= user.username %>" class="delete__button">Delete Account</a>
+        <a href="editProfile/<%= user.username %>" class="edit__button">Edit Profile</a>                  
+    </div>
+    <% }); %>
+</div>
+
+</tbody>
+
+</html>

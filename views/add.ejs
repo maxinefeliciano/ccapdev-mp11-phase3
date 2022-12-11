@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Document</title>
+    <link rel="shortcut icon" href="/static/images/testlogo.png">
+
+    <!--External CSS Code-->
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/add-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--External JS code-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <!--Navigation Bar-->
+    <div id = "header">
+        <a href="/uploads"><img src="/static/images/testlogo2.png" alt="Peer Learning Logo" align="left"></a>
+        <div class="topnav">
+            <input onclick="dropdown()" type="text" placeholder="Search.." id="Input" onkeyup="filter()">
+            <div class="dropdown">
+                <div id="Dropdown" class="dropdown-content">
+                    <ul>
+                    <% resources.forEach(function(resource){ %>
+                        <li><a href="view/<%= resource.id %>" class="resource"><%= resource.course %>: <%= resource.title %></a></li>
+                    <% }); %>
+                    </ul>
+                </div>
+            </div>
+            <a href="/logout">Log Out</a>
+            <a href="/profile">Edit Profile</a>
+            <a href="/about">About</a>
+        </div>
+    </div>
+
+    <script src="/static/js/viewScript.js"></script>
+
+    <!--Header-->
+    <div class="page-header">
+        
+        <div class="title">
+            <h1>Add New Document</h1>
+            <h2>Please upload a new document to be added to your list of uploads.</h2>
+        </div>
+
+        <button id="goBackBtn">Go Back to Uploads</button>
+    </div>
+
+    <!--Content-->
+    <div class="content-container">
+        
+        <div class="upload-section">
+            
+            <form action="/addDoc" method="post" enctype="multipart/form-data">
+                <!--Upload Box-->
+                <div id="upload-box">
+                    <input type="file" id="real-file" name="myFile" hidden>
+                    <i class="fa" id="icon">&#xf0ee;</i>
+                    <p id="text">Browse Files to Upload<br>(.pdf)</p>
+                </div>
+
+                <!--Fill up Details-->
+                <div class="fill-details">
+                    <div class="upper">
+                        <!--Course-->
+                        <div class="info">
+                            <label for="course">Course: </label><br>
+                            <input type="text" id="course" name="course" required>
+                        </div>  
+                        
+                        <!--Document Type-->
+                        <div class="info">
+                            <label for="docType">Document Type: </label><br>
+                            <input type="text" id="docType" name="docType" required>
+                        </div> 
+                    </div>
+                    <br>
+
+                    <!--Title-->
+                    <div class="info">
+                        <label for="title">Title: </label><br>
+                        <input type="text" id="title" name="title" required>
+                    </div> 
+                    <br> 
+
+                    <!--Upload Buttons-->
+                    <div class="upload-buttons">
+                        <input type="reset" id="resetBtn">
+                        <input type="submit" id="submitBtn">
+                    </div>
+                
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--External JS code-->
+    <!--Script is placed here at the bottom to run after the DOM elements have been created-->
+    <script type="text/javascript" src="/static/js/add-script.js"></script>
+
+</body>
+</html>

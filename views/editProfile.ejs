@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<thead>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <base href="/">
+    <link rel="shortcut icon" href="/static/images/testlogo.png">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</thead>
+
+<tbody>
+    <div class="container">   
+        <form class="form" action="updateUser/<%= user.username %>" method="post">
+            <input type="hidden" value="<%= user.id %>" name="id">
+            <div class = "navbar">
+                <a href="/uploads"><img src="/static/images/testlogo2.png" alt="Peer Learning Logo"></a>
+            </div>
+            <h2 class="header">Edit Profile</h2>
+            <div class="input-group">
+                <input type="text" class="input" autofocus placeholder="Name" value="<%= user.name %>" name="name" required>
+            </div>
+            <div class="input-group">
+                <input type="text" class="input" autofocus placeholder="Occupation" value="<%= user.occupation %>" name="occupation" required>
+            </div>
+            <div class="input-group">
+                <input type="text" id="signupUsername" class="input" autofocus placeholder="Username" value="<%= user.username %>" name="username" required>
+            </div>
+            <div class="input-group">
+                <input type="text" class="input" autofocus placeholder="Email Address" value="<%= user.email %>" name="email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" class="input" autofocus placeholder="Password" value="<%= user.password %>" name="password" required>
+            </div>
+            
+            <button class="button" type="submit">Submit</button>
+        </form>
+    </div>
+
+</tbody>
+
+</html>

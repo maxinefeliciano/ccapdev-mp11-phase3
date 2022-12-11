@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploads</title>
+    <link rel="shortcut icon" href="/static/images/testlogo.png">
+
+    <!--External CSS Code-->
+    <base href="/">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/uploads-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--External JS code-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/uploads-script.js"></script>
+</head>
+<body>
+
+    <!--Navigation Bar-->
+    <div id = "header">
+        <a href="/uploads"><img src="/static/images/testlogo2.png" alt="Peer Learning Logo" align="left"></a>
+        <div class="topnav">
+            <input onclick="dropdown()" type="text" placeholder="Search.." id="Input" onkeyup="filter()">
+            <div class="dropdown">
+                <div id="Dropdown" class="dropdown-content">
+                    <ul>
+                    <% views.forEach(function(resource){ %>
+                        <li><a href="view/<%= resource.id %>" class="resource"><%= resource.course %>: <%= resource.title %></a></li>
+                    <% }); %>
+                    </ul>
+                </div>
+            </div>
+            <a href="/logout">Log Out</a>
+            <a href="/profile">Edit Profile</a>
+            <a href="/about">About</a>
+        </div>
+    </div>
+
+    <script src="/static/js/viewScript.js"></script>
+
+   <!--Header-->
+   <div class="page-header">
+        
+        <div class="title">
+            <h1>My Uploads</h1>
+            <h2>Below are the list of documents you have uploaded.</h2>
+        </div>
+
+        <button id="addBtn">Add New Document</button>
+    </div>
+
+    <!--Content-->
+    <div class="content-container">
+        
+        <div class="header">
+            <p class="h-course">Course</p>
+            <p class="h-type">Document Type</p>
+            <p class="h-doc">Title & Description</p>
+        </div>
+
+        <div class="documents">
+            <% resources.forEach(function(resource){ %>
+            <div class="sample-resource">
+                <div class="doc-details">
+                    <p class="course"><%= resource.course %></p>
+                    <p class="type"><%= resource.type %></p>
+                    <div class="doc">
+                        <a href="view/<%= resource.id %>" class="doc-title"><%= resource.title %></a>
+                        <p class="doc-desc"><%= resource.description %></p>
+                    </div>
+                    <div class="doc-buttons">
+                        <a href="edit/<%= resource.title %>" class="btn-edit"><i class="fa fa-pencil"></i>     Edit</a>
+                        <a href="deleteRes/<%= resource.id %>" class="btn-delete"><i class="fa fa-trash"></i>      Delete</a>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <% }); %>
+        </div>
+
+    </div>
+    
+</body>
+</html>

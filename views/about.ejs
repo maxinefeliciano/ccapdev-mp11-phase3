@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="shortcut icon" href="/static/images/testlogo.png">
+
+    <!--External CSS Code-->
+    <base href="/">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/uploads-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--External JS code-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/uploads-script.js"></script>
+</head>
+<body>
+
+    <!--Navigation Bar-->
+    <div id = "header">
+        <a href="/uploads"><img src="/static/images/testlogo2.png" alt="Peer Learning Logo" align="left"></a>
+        <div class="topnav">
+            <input onclick="dropdown()" type="text" placeholder="Search.." id="Input" onkeyup="filter()">
+            <div class="dropdown">
+                <div id="Dropdown" class="dropdown-content">
+                    <ul>
+                    <% resources.forEach(function(resource){ %>
+                        <li><a href="view/<%= resource.id %>" class="resource"><%= resource.course %>: <%= resource.title %></a></li>
+                    <% }); %>
+                    </ul>
+                </div>
+            </div>
+            <a href="/logout">Log Out</a>
+            <a href="/profile">Edit Profile</a>
+            <a href="/about">About</a>
+        </div>
+    </div>
+
+    <script src="/static/js/viewScript.js"></script>
+       <!--Header-->
+   <div class="page-header">
+        
+    <div class="title">
+        <h1>About</h1>
+        <h3 class="subHead">Peer Learning was created to give learners a space where they can share and discover resources from each other. It was created to provide access to learners who need it the most.</h3></br></br>
+        <h2>Below are the list of dependencies used for this website:</h2>
+        <h3><ul>
+            <li>Bcrypt</li>
+            <li>Body Parser</li>
+            <li>Dotenv</li>
+            <li>EJS</li>
+            <li>Express</li>
+            <li>Express File Upload</li>
+            <li>Express Session</li>
+            <li>MongoDB</li>
+            <li>Mongoose</li>
+            <li>Passport</li>
+            <li>Passport Local</li>
+            <li>Passport Local Mongoose</li>
+        </ul></h3>
+    </div>
+
+</div>
+</body>
+</html>

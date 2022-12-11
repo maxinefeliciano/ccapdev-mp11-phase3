@@ -1,0 +1,54 @@
+:root {
+    /*COPY IN ALL HTML PAGES*/
+    --color-prim-one: #002DE4;
+    --color-prim-two: white;
+    --color-text-desc: #D9DEFF;
+    --color-secondary: #211B89;
+
+    --color-prim-button: #002DE4;
+    --color-prim-button-hover: #211B89;
+    --color-prim-button-hover-text: rgb(226, 226, 226);
+    --color-supp-button: rgb(246, 246, 246);
+    --color-supp-button-hover: #D9E0E6;
+    --color-supp-button-hover-text: #211B89;
+
+    --color-border: rgb(214, 214, 214);
+    --border-radius: 4px; 
+}
+
+/*Page Title*/
+
+.page-title {
+    height: 100%;
+    margin-left: 20px;
+}
+
+.page-title h1 {
+    margin-top: 15px;
+    margin-block-end: 10px;
+    font-size: 30px;
+    color: white;
+}
+
+.page-title h2 {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: var(--color-text-desc);
+}
+
+.page-title span {
+    color: white;
+}
+
+.page-title #display {
+    margin-left: 12px;
+}
+
+/*View Area*/
+iframe {
+    margin-top: 20px;
+    width: 80%;
+    height: 500px;
+    margin-bottom: 30px;
+}

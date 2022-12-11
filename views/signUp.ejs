@@ -1,0 +1,47 @@
+// WORKING COMPLETELY
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="shortcut icon" href="/static/images/testlogo.png">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">       
+        <form class="form" id="createAccount" action="/signUp" method="post">
+            <h1 class="title">Sign Up</h1>
+            <div class="input-group">
+                <input type="text" class="input" autofocus placeholder="Name" name="name">
+            </div>
+            <div class="input-group">
+                <input type="text" class="input" autofocus placeholder="Occupation" name="occupation">
+            </div>
+            <div class="input-group">
+                <input type="text" id="signupUsername" class="input" autofocus placeholder="Username" name="username">
+            </div>
+            <div class="input-group">
+                <input type="text" class="input" autofocus placeholder="Email Address" name="email">
+            </div>
+            <div class="input-group">
+                <input type="password" class="input" autofocus placeholder="Password" name="password">
+            </div>
+            <div class="input-group">
+                <input type="password" class="input" autofocus placeholder="Confirm Password" name="confirmPassword">
+            </div>
+            
+            <button class="button" type="submit">Continue</button><br/><br/>
+
+            <p class="text">
+                <a  class="link" href="/">Already have an account? Login</a>
+            </p>
+        </form>
+    </div>
+</body>
+</html>
